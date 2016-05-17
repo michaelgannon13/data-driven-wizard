@@ -1,0 +1,394 @@
+<!-- CSS needed for wizard -->
+<link rel="stylesheet" href="dist/bootstrap.min.css">
+<link rel="stylesheet" href="dist/uikit.min.css">
+<link rel="stylesheet" href="css/style.css"> 
+<style type="text/css">
+select{
+  outline: none;
+  background-color: #F8F8F8;
+  color: #5AB1DE;
+  font-size: 18px;
+  border-color: #ddd;
+}
+
+h3.popover-title {
+    width: 595px;
+}
+</style>
+
+<div class='container-fluid'>
+
+<!--
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title" id="myModalLabel">Processing</h4>
+	      </div>
+	      <div class="modal-body center-block">
+	        <div class="progress">
+	        	<div id+"bar"="" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+				</div>
+	        </div>
+	      </div>
+	    </div>
+	</div>
+-->
+
+</div>
+	<section id="wizard">
+		<div id="rootwizard">
+			<div class="navbar" id="wizardNav">
+				<div class="navbar-inner">
+					<div class="container">
+						<ul>
+							<li><a href="#tab1" data-toggle="tab" class="tab">Step 1</a></li>
+							<li><a href="#tab2" data-toggle="tab" class="tab">Step 2</a></li>
+							<li><a href="#tab3" data-toggle="tab" class="tab">Step 3</a></li>
+							<li><a href="#tab4" data-toggle="tab" class="tab">Step 4</a></li>
+							<li><a href="#tab5" data-toggle="tab" class="tab">Step 5</a></li>
+							<li><a href="#tab6" data-toggle="tab" class="tab">Step 6</a></li>
+							<li><a href="#tab7" data-toggle="tab" class="tab">Step 7</a></li>
+							<li><a href="#tab8" data-toggle="tab" class="tab">Step 8</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row middle">
+				<div class="
+						col-xs-12   
+						col-sm-offset-1 col-sm-10 col-sm-offset-1
+						col-md-offset-2 col-md-8 col-md-offset-2 
+						col-lg-offset-3 col-lg-6 col-lg-offset-3
+						">
+					<div class="brief">
+						First we have a few questions. This will speed up and make your material production process easier. <span id="note">Some questions will be skipped based on your previous answers.</span>
+					</div>
+					<div id="bar" class="progress">
+						<div id+"bar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+						</div>
+					</div>
+					<div class="tab-content">
+						<ul class="pager wizard">
+							<li class="previous first" style="display:none;"><a href="#">First</a></li>
+							<li class="previous"><a href="javascript:void(null)" id="jumpBack"><i class="fa fa-arrow-left"></i> <span>&nbspBack &nbsp</span></a></li>
+							<li class="last" style="display:none;"><a id="final" href="#myModal" data-toggle="modal"><span>&nbspContinue &nbsp</span><i class="fa fa-arrow-right"></i></a></li>
+							<li class="next"><a href="javascript:void(null)" id="jump"><span>&nbspNext &nbsp</span><i class="fa fa-arrow-right"></i></a></li>
+						</ul>
+
+						<!--TAB 1-->
+						<div class="tab-pane" id="tab1">
+							<div class="question">
+								Are you creating materials for:
+							</div>
+							<form class="qs">
+								<div class="radRow">
+									<input class="nudge" onclick="highlight();" type="radio" id="social" name="whatFor" value="facebook" checked><span id="sm" class="sel" onclick="daFunction(this), highlight();">Facebook <small> (Promotions, offers, followers)</small></span>
+								</div>
+								<br> 
+								<div class="radRow">
+									<input class="nudge" onclick="highlight();" type="radio" id="print" name="whatFor" value="print"><span id="pr" class="sel" onclick="daFunction(this), highlight();">Print <small> (Posters, Leaflets, Shelf Signs)</small></span>
+								</div>
+								<br> 
+							</form>
+						</div>
+
+						<!--TAB 2a-->
+						<div class="tab-pane" id="tab2">
+							<span class="question">What are you Promoting?</span> 
+							<form class="qs" name="catselect" onchange="highlight();">
+								<div class="radRow">
+									<input class="nudge" onclick="highlight();" type="radio" id="product" name="promoting" value="product" checked><span id="p" class="sel" onclick="daFunction(this), highlight();">Product</span>
+								</div>
+								<br> 
+								<div class="radRow">
+									<input class="nudge" onclick="highlight();" type="radio" id="service" name="promoting" value="service"><span id="s" class="sel" onclick="daFunction(this), highlight();">Service</span>
+								</div>
+							</form>
+						</div>
+
+						<!--TAB 2b-->
+						<div class="tab-pane" id="tab3">
+							<span class="question">Select Colour:</span> 
+							<form class="qs">
+								<div class="row">
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="red"> 
+										<input id="redRad" type="radio" name="paperType" value="red" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="redPic" class="img-responsive find" src="dist/minImages/newRed.jpg" alt=""> 
+										<img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="blue"> 
+										<input id="blueRad" type="radio" name="paperType" value="blue" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="bluePic" class="img-responsive find" src="dist/minImages/newBlue.jpg" alt=""> 
+										<img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="green"> 
+										<input id="greenRad" type="radio" name="paperType" value="green" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="greenPic" class="img-responsive find" src="dist/minImages/greenNew.jpg" alt=""> 
+										<img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="yellow"> 
+										<input id="yellowRad" type="radio" name="paperType" value="yellow" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="yellowPic" class="img-responsive find" src="dist/minImages/yellowNew.jpg" alt=""> 
+										<img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="purple"> 
+										<input id="purpleRad" type="radio" name="paperType" value="purple" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="purplePic" class="img-responsive find" src="dist/minImages/purpleNew.jpg" alt=""> 
+										<img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="olive"> 
+										<input id="oliveRad" type="radio" name="paperType" value="lightGreen" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="olivePic" class="img-responsive find" src="dist/minImages/lightGreenNew.jpg" alt=""> <img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="aqua"> 
+										<input id="aquaRad" type="radio" name="paperType" value="black" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="blackPic" class="img-responsive find" src="dist/minImages/newBlack.jpg" alt=""> 
+										<img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="pink"> 
+										<input id="pinkRad" type="radio" name="paperType" value="pink" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="pinkPic" class="img-responsive find" src="dist/minImages/pinkNew.jpg" alt=""> 
+										<img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="navy"> 
+										<input id="navyRad" type="radio" name="paperType" value="navy" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="navyPic" class="img-responsive find" src="dist/minImages/newNavy.jpg" alt=""> 
+										<img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="navy"> 
+										<input id="navyRad" type="radio" name="paperType" value="orange" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="orangePic" class="img-responsive find" src="dist/minImages/newOrange.jpg" alt=""> 
+										<img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="navy"> 
+										<input id="navyRad" type="radio" name="paperType" value="maroon" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="maroonPic" class="img-responsive find" src="dist/minImages/newMaroon.jpg" alt=""> 
+										<img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-6 thumb">
+										<a class="thumbnail" id="navy"> 
+										<input id="navyRad" type="radio" name="paperType" value="navyWithLightBlue" class="hideMe" />
+										<img onclick="changeIt(this), highlight();" id="navyWithLightBluePic" class="img-responsive find" src="dist/minImages/newNavyWithLightBlue.jpg" alt=""> 
+										<img class="uk-overlay-panel findTick" src="dist/minImages/check.png"> </a> 
+									</div>	
+								</div>
+							</form>
+						</div>
+
+						<!--TAB 2-->
+						<div class="tab-pane" id="tab4">
+							<span class="question">Are you printing:</span> 
+							<form class="qs">
+								<div class="radRow">
+									<input class="nudge" id="poster" type="radio" name="printing" value="poster" checked> <span id="p" class="sel" onclick="daFunction(this), highlight();">Poster <a href="#my-id" data-uk-modal><small>see example</small></a> </span> 
+								</div>
+								<br> 
+								<div class="radRow">
+									<input class="nudge" id="leaflet" type="radio" name="printing" value="leaflet"> <span id="l" class="sel" onclick="daFunction(this), highlight();">Leaflet <a href="#my-id1" data-uk-modal><small>see example</small></a> </span> 
+								</div>
+								<br> 
+								<div class="radRow">
+									<input class="nudge" type="radio" name="printing" value="shelfTalker" id="shelf"> <span id="s" onclick="daFunction(this), highlight();" class="sel">Shelf Sign <a href="#my-id2" data-uk-modal><small>see example</small></a> </span> 
+								</div>
+								<br><br> 
+								<!-- Modals -->
+								<div id="my-id" class="uk-modal">
+									<div class="uk-modal-dialog uk-border-rounded">
+										<a class="uk-modal-close uk-close"></a> <img class="img-responsive center-block uk-border-rounded" src="dist/minImages/poster.png"> 
+									</div>
+								</div>
+								<div id="my-id1" class="uk-modal">
+									<div class="uk-modal-dialog uk-border-rounded">
+										<a class="uk-modal-close uk-close"></a> <img class="img-responsive center-block uk-border-rounded" src="dist/minImages/Leaflet.png"> 
+									</div>
+								</div>
+								<div id="my-id2" class="uk-modal">
+									<div class="uk-modal-dialog uk-border-rounded">
+										<a class="uk-modal-close uk-close"></a> <img class="img-responsive center-block uk-border-rounded" src="dist/minImages/shelf.png"> 
+									</div>
+								</div>
+							</form>
+						</div>
+
+						<div class="modal hide" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">
+					        <div class="modal-header">
+					            <h1>Processing...</h1>
+					        </div>
+					        <div class="modal-body">
+					            <div class="progress progress-striped active">
+					                <div class="bar" style="width: 100%;"></div>
+					            </div>
+					        </div>
+					    </div>
+
+						<!--TAB 4a-->
+						<div class="tab-pane" id="tab5">
+							<span class="question">Select template:</span> 
+							<form class="qs">
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-xs-6">
+										<a class="thumbnail bord"> 
+										<input id="3up" type="radio" name="size" value="3up" class="thumbnailTemp" />
+										<img onclick="changeItAgain(this), highlight();" id="3upPic" class="img-responsive findTemp" src="dist/minImages/1off.png"> <img id="otherTick" class="uk-overlay-panel findTickTemp" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-6 col-md-6 col-xs-6">
+										<a class="thumbnail bord"> 
+										<input id="6up" type="radio" name="size" value="6up" class="thumbnailTemp" />
+										<img onclick="changeItAgain(this), highlight();" id="6upPic" class="img-responsive findTemp" src="dist/minImages/3off.png"> <img id="otherTick" class="uk-overlay-panel findTickTemp" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-6 col-md-6 col-xs-6">
+										<a class="thumbnail bord"> 
+										<input id="9up" type="radio" name="size" value="9up" class="thumbnailTemp" />
+										<img onclick="changeItAgain(this), highlight();" id="9upPic" class="img-responsive findTemp" src="dist/minImages/6off.png"> <img id="otherTick" class="uk-overlay-panel findTickTemp" src="dist/minImages/check.png"> </a> 
+									</div>
+									<div class="col-lg-6 col-md-6 col-xs-6">
+										<a class="thumbnail bord"> 
+										<input id="12up" type="radio" name="size" value="12up" class="thumbnailTemp" />
+										<img onclick="changeItAgain(this), highlight();" id="12upPic" class="img-responsive findTemp" src="dist/minImages/9off.png"> <img id="otherTick" class="uk-overlay-panel findTickTemp" src="dist/minImages/check.png"> </a> 
+									</div>
+								</div>
+							</form>
+						</div>		
+
+						<!--TAB 6-->
+						<div class="tab-pane" id="tab6">
+							<span class="question">What size do you want:</span> 
+							<form class="qs">
+								<select id="longerDrop" name="size" onchange="highlight();">
+									<option value="a4">A4 210x297mm</option>
+									<option value="a3">A3 297x420mm</option>
+									<option value="a2">A2 420x594mm</option>
+									<option value="30x20">30x20 508x762mm</option>
+									<option value="a1">A1 594x841mm</option>
+									<option value="40x30">40x30 762x1016mm</option>
+									<option value="A0">A0 841x1189mm</option>
+									<option value="60x40">60x40 1016x1524mm</option>
+									<option value="A00">A00 1189x1682mm</option>
+								</select>
+								<center>
+									<img src="dist/minImages/guideRev.png"> 
+								</center>
+							</form>
+						</div>
+
+						<!--TAB 6a-->
+						<div class="tab-pane" id="tab7">
+							<span class="question">What size do you want:</span> 
+							<form class="qs">
+								<select id="shorterDrop" name="size" onchange="highlight();">
+									<option value="a4-ss">A4 Single sided</option>
+									<option value="a4-ds">A4 Double sided</option>
+									<option value="a5-ss">A5 Single sided</option>
+									<option value="a5-ds">A5 Double sided</option>
+									<option value="dl-ss">DL Single sided</option>
+									<option value="dl-ds">DL Double sided</option>
+								</select>
+								<center>
+									<img src="dist/minImages/leafletSizes1.png"> 
+								</center>
+							</form>
+						</div>
+
+						<!--TAB 7-->
+						<div class="tab-pane" id="tab8">
+							<span class="question">Select template format:</span> 
+							<form class="qs">
+								<div class="radRow">
+									<input class="nudge" onclick="highlight();" id="txtRad" type="radio" name="template" value="textOnly" checked><span id="txt" class="sel" onclick="daFunction(this), highlight();"> Text only <a href="#text" data-uk-modal><small>see example</small></a></span> 
+								</div>
+								<br> 
+								<div class="radRow">
+									<input class="nudge" onclick="highlight();" id="txtImgRad" type="radio" name="template" value="textAndImage"><span id="txtImg" class="sel" onclick="daFunction(this), highlight();"> Text including image <a href="#image" data-uk-modal><small>see example</small></a></span> 
+								</div>
+								<br> 
+								<div id="text" class="uk-modal">
+									<div class="uk-modal-dialog uk-border-rounded">
+										<a class="uk-modal-close uk-close"></a> <img class="img-responsive center-block uk-border-rounded" src="dist/minImages/noImage.png"> 
+									</div>
+								</div>
+								<div id="image" class="uk-modal">
+									<div class="uk-modal-dialog uk-border-rounded">
+										<a class="uk-modal-close uk-close"></a> <img class="img-responsive center-block uk-border-rounded" src="dist/minImages/withImage.png"> 
+									</div>
+								</div>
+							</form>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<!-- Taking this doesn't effect wizard but will leave it here for testing -->
+<!-- <script src="/_domain/wizard/bootstrap/js/bootstrap.min.js"></script> -->
+
+ <!-- Javascript needed for Wizard -->
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="dist/uikit.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.bootstrap.wizard.js"></script> 
+<script src="js/paper.js"></script> 
+<script src="js/handle.js"></script> 
+<script type="text/javascript" src="node_modules/jquery-serializejson/jquery.serializejson.js"></script> 
+<script>
+	$(document).ready(function() {
+		$(".middle").delay(200).animate({ 
+			opacity: 1 }, 
+			500);
+
+		// Wizard configure
+	  	$('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
+			var $total = navigation.find('li').length;
+			var $current = index+1;
+			var $percent = ($current/$total) * 100;
+			$('#rootwizard .progress-bar').css({width:$percent+'%'});
+
+			// If it's the last tab then hide the last button and show the finish instead
+			if ($current >= $total) {
+				$('#rootwizard').find('.pager .next').hide();
+				$('#rootwizard').find('.pager .last').show();
+				// Styling PROCEED button
+				$('#rootwizard').find('.pager .last').css("float", "right");
+				$('#rootwizard').find('.pager .last').removeClass('disabled');
+
+			} else {
+				$('#rootwizard').find('.pager .next').show();
+				$('#rootwizard').find('.pager .last').hide();
+				$('#rootwizard').find('.pager .finish').hide();
+			}
+		}});
+
+	  	// Serialize user selection
+		$('#rootwizard .last').click(function serialize(form) {
+
+			// While processing click events are disabled on entire body 
+			document.addEventListener("click",handler,true);
+			function handler(e){
+			    e.stopPropagation();
+			    e.preventDefault();
+			}
+
+			var json = $('.qs').serializeJSON();
+			var jsonString = JSON.stringify(json);
+			var decodedJSON = decodeURIComponent(jsonString); 
+			var cleanJSON = decodedJSON.replace(/{|}|"/g,"").replace(/:/g,"=").replace(/,/g,"&");
+			alert(decodedJSON);											
+			//window.location.href='http://www.doddle.local/wizard/?' + cleanJSON;
+		});	
+	  	$(function () {
+	  		$('[data-toggle="tooltip"]').tooltip()
+		});
+	});
+</script> 

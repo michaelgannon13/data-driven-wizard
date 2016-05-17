@@ -1,0 +1,374 @@
+body{
+  font-family: 'Lato', serif; 
+}  
+
+span.hideMe {
+    line-height: 35px;
+}
+
+input.nudge {
+    position: relative;
+    bottom: 5px;
+}
+
+.nav-stacked>li+li {
+    margin-top: 0;
+}
+
+/*
+.modal-backdrop, .modal-backdrop.fade.in {
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.modal-content {
+    z-index: 100000 !important;
+}
+*/
+
+h1.doddlePricing-list{
+  font-family: 'lato';
+  font-weight: 600;
+  color: #5D5D5D;
+  font-size: 70px;
+  text-align: center;
+}
+
+div#pricing-left {
+    margin-left: -32px;
+}
+
+a.swapItemBack, a.swapItem {
+    font-size: 22px;
+    font-weight: 600;
+    color: #DF16A1;
+}
+
+div#holder-one-pricing {
+    font-size: 18px;
+}
+
+div#holder-one-pricing a {
+    color: #5D5D5D;
+    margin-left: -32px;
+}
+
+div#holder-two-pricing {
+    text-align: right;
+    padding-right: 28px;
+}
+
+ul.nav.nav-list.nav-stacked.nav-tabs {
+    margin-top: -22px;
+}
+
+input[type='radio'] {
+  -webkit-appearance:none;
+  width:15px;
+  height:15px;
+  border:1px solid #ddd;
+  border-radius:50%;
+  outline:none;
+}
+
+li.menLeft {
+    margin-left: 0;
+}
+
+input.searchField {
+    height: inherit;
+}
+
+input[type='radio']:before {
+  content:'';
+  display:block;
+  width:60%;
+  height:60%;
+  margin: 20% auto;    
+  border-radius:50%;
+  border: none;    
+}
+
+input[type='radio']:checked:before {
+  background: #3ea4d9;
+}
+
+#note{
+  font-weight: 600;
+}
+
+input[type="radio"]:checked+span {
+  -webkit-transition: color .1s ease-in-out; 
+  color: #3ea4d9;
+}
+
+input[type=radio], input[type=checkbox] {
+  outline: none !important;
+}
+
+.sel:hover{
+  cursor: pointer;
+}
+
+.uk-overlay-panel {
+  transition: opacity 0.5s ease-in-out; 
+  transition: all 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out; 
+  top: 25%;
+  left: 6%;
+  width: 55%;
+  height: auto;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+#otherTick{
+  left: 3%;
+  width: 40%;
+  height: auto; 
+}
+
+#paperGuide{
+  color: #5A5A5A;
+  letter-spacing: 2.2px;
+  font-family: 'Lato', serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 10px 10px 10px;
+  text-transform: uppercase;
+  background-color: #F8F8F8;
+  border: 1px solid #ddd;
+}
+
+#jump, #jumpBack, #final{
+  -webkit-transition: background.5s ease, color .5s linear, border-color 0.5s ease;
+  -moz-transition: background.5s ease, color .5s linear, border-color 0.5s ease;
+  -o-transition: background.5s ease, color .5s linear, border-color 0.5s ease;
+  transition: background.5s ease, color .5s linear, border-color 0.5s ease;
+  background: #F8F8F8;
+  color: #5AB1DE;
+  padding: 8px 12px 8px 12px;
+  border-color: #ddd;
+  font-size: large;
+  border-radius: 20px;
+}
+
+#jump:hover, #jumpBack:hover{
+  background: #3ea4d9 !important;
+  color: #fff !important;
+  cursor: pointer !important;
+  border-color: #ddd !important;
+}
+
+a:hover, a:visited, a:active, a:link{
+  text-decoration: none;
+}
+
+#porImg, #lanImg {
+  transition: opacity 0.2s ease-in-out; 
+  transition: all 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out; 
+  opacity: 0;
+}
+
+.find{
+  transition: opacity 0.2s ease-in-out; 
+  transition: all 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out; 
+  margin-bottom: 15px;
+}
+
+.findTemp{
+  transition: opacity 0.2s ease-in-out; 
+  transition: all 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out; 
+  margin-bottom: 15px;
+}
+
+.findTick {
+  pointer-events: none;
+} 
+
+.findTickTemp {
+  pointer-events: none;
+} 
+
+.next:hover .previous:hover input:hover{
+  cursor: pointer;
+}
+
+.hideMe{
+  visibility: hidden;
+}
+
+.thumbnailTemp{
+  visibility: hidden;
+}
+
+.thumbnail {
+  margin-bottom: 10px;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin: 0 0 0 33px; /* IE indents via margin-left */
+}
+
+ol.linenums li {
+  padding-left: 12px;
+  color: #bebec5;
+  line-height: 20px;
+  text-shadow: 0 1px 0 #fff;
+}
+
+#wrap{
+  padding: 0 10px 10px 10px;
+}
+
+h1{
+  letter-spacing: 0.5px;
+  color: #5A5A5A;
+  font-weight: 500;
+  font-family: 'Lato', sans-serif;
+}
+
+.low{
+  color: #5A5A5A;
+  letter-spacing: 2px;
+  font-family: 'Lato', serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.uk-button-dropdown{
+  display: inline;
+}
+
+.btn.btn-default{
+  background-color: #fff;
+  border: none;
+  font-size: 85%;
+  font-weight: 400; 
+  color: #999999;
+  font-style: italic;
+}
+
+#bar{
+  background-color: #f1f1f1;
+}
+
+.progress-bar{
+  background-color: #3ea4d9;
+}
+
+#portraitPic{
+  display: inline;
+  margin-left: 100px;
+}
+
+#landscapePic{
+   display: inline;
+   margin-left: 50px;
+}
+
+#porImg, #lanImg:hover{
+  cursor: pointer;
+}
+
+.top{
+  background-color: #F8F8F8;
+  border-bottom: 1px solid #ddd;
+}
+
+.middle{
+  margin-top: -20px;
+  opacity: 0;
+}
+
+.brief{
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #5a5a5a;
+  margin-bottom: 30px;
+  font-family: 'Lato', serif;
+}
+
+#paper{
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #3ea4d9;
+  font-family: 'Lato', serif;
+}
+
+.qs{
+  margin-top: 20px;
+  padding-bottom: 100px;
+}
+
+.news{
+  font-size: 20px;
+  margin-left: 3px;
+  margin-bottom: -2px;
+  font-weight: 500;
+}
+
+#wizardNav {
+  display: none;
+}
+
+.radRow{
+  margin-bottom: 5px;
+}
+
+.question{
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 1px;
+  font-family: 'Lato', sans-serif;
+  color: #5A5A5A;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sel{
+  margin-left: 8px;
+  font-size: 24px;
+  color: #5A5A5A;
+  letter-spacing: 0.5px;
+  font-weight: 300;  
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+small{
+  font-family: 'Lato', serif;
+  color: #989898;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.uk-close{
+  color: #000 !important;
+}
+
+small:hover{
+  transition: opacity 0.8s ease-in-out; 
+  transition: all 0.8s ease-in-out;
+  -moz-transition: opacity 0.8s ease-in-out;
+  -webkit-transition: opacity 0.8s ease-in-out; 
+  color: #3ea4d9; 
+}
+
+#rootwizard{
+  margin-top: 40px;
+}
+
+
